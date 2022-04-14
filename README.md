@@ -42,12 +42,13 @@ Add and remove operation still involves lock which can be further imporved. The 
 
 A report will be generated every hour with the following formate
 
-===============================================================================
+======================================================================  
 Current Hour: T
-Top 5 highest temperature: [X, X, X, X, X]
-Top 5 lowest temperature: [Y, Y, Y, Y, Y]
-Largest temperature difference of D was observed from M to N minute
-===============================================================================
+Top 5 highest temperature: [X, X, X, X, X]  
+Top 5 lowest temperature: [Y, Y, Y, Y, Y]  
+Largest temperature difference of D was observed from M to N minute  
+
+======================================================================  
 
 ### Proof of Correctness
 
