@@ -29,3 +29,30 @@ This program utilizes LazyList. Each node represents a gift and contains a lock.
 ### Experimental Evaluation & Efficiency
 
 Add and remove operation still involves lock which can be further imporved. The contain operation in this program will be wait-free.
+
+## Problem 2
+
+### Installation
+
+1. Navigate to the folder where presentParty.java is located
+2. Compile the program by running `javac temperature.java`
+3. Run the program by running `java temperature`
+
+### Output
+
+A report will be generated every hour with the following formate
+
+===============================================================================
+Current Hour: T
+Top 5 highest temperature: [X, X, X, X, X]
+Top 5 lowest temperature: [Y, Y, Y, Y, Y]
+Largest temperature difference of D was observed from M to N minute
+===============================================================================
+
+### Proof of Correctness
+
+This program simulates temperature reading for 10 hours with 8 threads running simultaneously. Temperature reading for every minute is simulated by having the thread generate a random number every 1 millisecond. Shared memory storage has two heaps storing the max 5 and min 5 temperature readings within an hour, and the data refreshes every hour. It also records the max temperature difference within every 10 minutes within an hours, this data also refreshes every 10 minutes. The program utilizes semaphore lock for the part where it updates the temperature list and max difference interval to ensure that only one thread can update the share memory space.
+
+### Experimental Evaluation & Efficiency
+
+Running 8 threads ensures the reading can be proceeded simultaneously, using semaphore lock ensures the shared memory space is being carefully handled.
